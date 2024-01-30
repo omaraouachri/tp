@@ -48,7 +48,7 @@ jobs:
           gcloud compute instances create-with-container prenoms-api-omar \
             --container-image omaraouachri/tp:${{ github.sha }} \
             --tags http-server \
-            --zone us-central1-b \
+            --zone asia-east1-a \
             --container-env FLASK_PORT=80
 
       - name: Update API to GCP Compute Instance
@@ -56,5 +56,5 @@ jobs:
         run: |
           gcloud compute instances update-container prenoms-api-omar \
             --container-image omaraouachri/tp:${{ github.sha }} \
-            --zone us-central1-a \
+            --zone asia-east1-a \
             --container-env FLASK_PORT=80 
