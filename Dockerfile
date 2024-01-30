@@ -13,4 +13,5 @@ COPY pyproject.toml pyproject.toml
 RUN $HOME/.local/bin/poetry install
 COPY . .
 
-CMD ["flask","--app","app","run","--host 0.0.0.0 --port $FLASK_PORT"]
+
+CMD ["bash", "-c", "flask --app api run --host 0.0.0.0 --port $FLASK_PORT"]
